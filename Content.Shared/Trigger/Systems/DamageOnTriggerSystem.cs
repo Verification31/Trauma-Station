@@ -5,7 +5,7 @@ namespace Content.Shared.Trigger.Systems;
 
 public sealed class DamageOnTriggerSystem : XOnTriggerSystem<DamageOnTriggerComponent>
 {
-    [Dependency] private readonly DamageableSystem _damageableSystem = default!;
+    [Dependency] private readonly Damage.Systems.DamageableSystem _damageableSystem = default!;
 
     protected override void OnTrigger(Entity<DamageOnTriggerComponent> ent, EntityUid target, ref TriggerEvent args)
     {
@@ -14,7 +14,7 @@ public sealed class DamageOnTriggerSystem : XOnTriggerSystem<DamageOnTriggerComp
         RaiseLocalEvent(ent.Owner, ref ev);
 
         // Trauma - added targetPart
-        args.Handled |= _damageableSystem.TryChangeDamage(target, ev.Damage, ent.Comp.IgnoreResistances, origin: ent.Owner, targetPart: ent.Comp.TargetPart) is not null;
+        args.Handled |= _damageableSystem.TryChangeDamage(target, ev.Damage, ent.Comp.IgnoreResistances, origin: ent.Owner, targetPart: ent.Comp.TargetPart);
     }
 }
 

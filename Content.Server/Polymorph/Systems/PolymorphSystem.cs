@@ -23,7 +23,8 @@ using Content.Server.Inventory;
 using Content.Server.Polymorph.Components;
 using Content.Shared.Buckle;
 using Content.Shared.Coordinates;
-using Content.Shared.Damage;
+using Content.Shared.Damage.Components;
+using Content.Shared.Damage.Systems;
 using Content.Shared.Destructible;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.IdentityManagement;
@@ -222,15 +223,14 @@ public sealed partial class PolymorphSystem : EntitySystem
             return null;
 
         // mostly just for vehicles
-        if (TryComp(uid, out BuckleComponent? buckle)) // Goob edit
-            _buckle.TryUnbuckle((uid, buckle), uid, true);
+        _buckle.TryUnbuckle(uid, uid, true);
 
         var targetTransformComp = Transform(uid);
 
         if (configuration.PolymorphSound != null)
             _audio.PlayPvs(configuration.PolymorphSound, targetTransformComp.Coordinates);
 
-        // Goob edit start
+        // <Goob> - allow rolling random entity if it's null
         var proto = configuration.Entity;
         if (proto == null)
         {
@@ -246,11 +246,11 @@ public sealed partial class PolymorphSystem : EntitySystem
 
             proto = entities.Pick(_random);
         }
-        // Goob edit end
         var child = Spawn(proto, _transform.GetMapCoordinates(uid, targetTransformComp), rotation: _transform.GetWorldRotation(uid));
 
-        // Goob - added AllowMovement
+        // added AllowMovement
         _mindSystem.MakeSentient(child, configuration.AllowMovement);
+        // </Goob>
 
         // Einstein Engines - Language begin
         // Copy specified components over
@@ -287,8 +287,9 @@ public sealed partial class PolymorphSystem : EntitySystem
             _mobThreshold.GetScaledDamage(uid, child, out var damage, out var woundableDamage) &&
             damage != null)
         {
+            // <Shitmed>
             if (TryComp<BodyComponent>(child, out var childBody)
-                && childBody.BodyType == Shared._Shitmed.Body.BodyType.Complex // Too lazy to come up with a new name lmfao
+                && childBody.BodyType == BodyType.Complex // Too lazy to come up with a new name lmfao
                 && _body.TryGetRootPart(child, out var rootPart, childBody))
             {
                 var woundables = _wound.GetAllWoundableChildrenWithComp<DamageableComponent>(rootPart.Value);
@@ -309,7 +310,8 @@ public sealed partial class PolymorphSystem : EntitySystem
                 }
 
             }
-            _damageable.SetDamage(child, damageChild, damage);
+            // </Shitmed>
+            _damageable.SetDamage((child, damageChild), damage);
         }
 
         // DeltaV - Drop MindContainer entities on polymorph
@@ -478,8 +480,9 @@ public sealed partial class PolymorphSystem : EntitySystem
             _mobThreshold.GetScaledDamage(uid, parent, out var damage, out var woundableDamage) &&
             damage != null)
         {
+            // <Shitmed>
             if (TryComp<BodyComponent>(parent, out var parentBody)
-                && parentBody.BodyType == Shared._Shitmed.Body.BodyType.Complex // Too lazy to come up with a new name lmfao
+                && parentBody.BodyType == BodyType.Complex // Too lazy to come up with a new name lmfao
                 && _body.TryGetRootPart(parent, out var rootPart, parentBody))
             {
                 var woundables = _wound.GetAllWoundableChildrenWithComp<DamageableComponent>(rootPart.Value);
@@ -500,7 +503,8 @@ public sealed partial class PolymorphSystem : EntitySystem
                 }
 
             }
-            _damageable.SetDamage(parent, damageParent, damage);
+            // </Shitmed>
+            _damageable.SetDamage((parent, damageParent), damage);
         }
 
         if (component.Configuration.Inventory == PolymorphInventoryChange.Transfer)
