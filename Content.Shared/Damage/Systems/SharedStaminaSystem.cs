@@ -5,7 +5,6 @@ using Content.Shared._Shitcode.Weapons.Misc;
 using Content.Shared.Jittering;
 using Content.Shared.Speech.EntitySystems;
 using Robust.Shared.Random;
-using Robust.Shared.Utility;
 // </Trauma>
 using System.Linq;
 using Content.Shared.Administration.Logs;
