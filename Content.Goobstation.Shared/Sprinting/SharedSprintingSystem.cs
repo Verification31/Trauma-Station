@@ -13,7 +13,6 @@ using Content.Shared.Buckle.Components;
 using Content.Shared.Cuffs.Components;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Components;
-using Content.Shared.Damage.Events;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Gravity;
 using Content.Shared.Input;
@@ -164,10 +163,6 @@ public abstract class SharedSprintingSystem : EntitySystem
         component.LastSprint = _timing.CurTime;
         component.IsSprinting = newSprintState;
 
-        // Raise the stamina-specific event (for `SharedStaminaSystem.cs`)
-        var staminaEv = new SprintingStateChangedEvent(uid, newSprintState);
-        RaiseLocalEvent(uid, ref staminaEv);
-
         if (newSprintState)
         {
             RaiseLocalEvent(uid, new SprintStartEvent());
@@ -302,6 +297,15 @@ public abstract class SharedSprintingSystem : EntitySystem
     }
     private void OnZombified(EntityUid uid, SprinterComponent component, ref EntityZombifiedEvent args) =>
         component.SprintSpeedMultiplier *= 0.5f; // We dont want super fast zombies do we?
+
+    private void OnDisarm(EntityUid uid, SprinterComponent sprinter, ref DisarmedEvent args)
+    {
+        if (!sprinter.IsSprinting)
+            return;
+
+        _staminaSystem.TakeStaminaDamage(uid, sprinter.StaminaPenaltyOnShove, applyResistances: true, logDamage: false);
+        ToggleSprint(uid, sprinter, false, gracefulStop: true);
+    }
 
     #endregion
 }
