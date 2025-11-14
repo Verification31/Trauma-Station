@@ -630,3 +630,9 @@ Entries:
         cavity.
   id: 69
   time: '2025-11-13T15:08:37.0000000+00:00'
+- author: deltanedas
+  changes:
+    - type: Tweak
+      message: Abductors have much lower chaos score, so less chudshifts.
+  id: 70
+  time: '2025-11-14T18:01:03.0000000+00:00'
