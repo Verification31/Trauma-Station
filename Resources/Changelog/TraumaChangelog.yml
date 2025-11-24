@@ -688,3 +688,9 @@ Entries:
       message: Fixed batong not having delayed knockdown.
   id: 78
   time: '2025-11-22T22:15:52.0000000+00:00'
+- author: Aviu
+  changes:
+    - type: Add
+      message: Sound now gets muffled when passing through obstacles.
+  id: 79
+  time: '2025-11-24T16:29:56.0000000+00:00'
