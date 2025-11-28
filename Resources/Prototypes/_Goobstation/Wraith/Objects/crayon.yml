@@ -29,7 +29,3 @@
     - Recyclable
     - Trash
   - type: SpaceGarbage
-  - type: UserInterface
-    interfaces:
-      enum.CrayonUiKey.Key:
-        type: CrayonBoundUserInterface

@@ -49,7 +49,7 @@
     - id: DevilmidroundHermit
     - id: ZombieOutbreak
     - id: LoneOpsSpawnHermit
-    - id: DerelictCyborgSpawnHermit
+    - id: DerelictEngineerCyborgSpawnHermit
     - id: BlobMidroundHermit # Goobstation - Where is the orignal? armok changed this version which isnt the version this uses
     - id: LoneAbductorSpawnhermit # Shitmed - Starlight Abductors
     - id: DuoAbductorSpawnHermit # Shitmed - Starlight Abductors
@@ -221,8 +221,8 @@
     chaosScore: 750 #increased by 50
 
 - type: entity
-  parent: DerelictCyborgSpawn
-  id: DerelictCyborgSpawnHermit
+  parent: DerelictEngineerCyborgSpawn
+  id: DerelictEngineerCyborgSpawnHermit
   components:
   - type: StationEvent
     weight: 3.5 #decreased by 1.5
