@@ -117,14 +117,8 @@
   - type: ActionsProvider
     actions:
     - ActionHereticJaunt
-    # basically an EMP implant. don't feel like making 1 more emp action
-    - ActionActivateEmpImplant
+    - ActionActivateEmp
     - ActionHereticShapeshift
-  - type: TriggerImplantAction
-  - type: EmpOnTrigger
-    range: 5
-    energyConsumption: 50000
-    disableDuration: 20
   - type: MovementSpeedModifier
     baseWalkSpeed: 4.5 # Trauma edit
     baseSprintSpeed: 4.5 # Trauma edit

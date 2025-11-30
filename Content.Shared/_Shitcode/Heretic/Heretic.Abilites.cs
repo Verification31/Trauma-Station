@@ -412,6 +412,18 @@ public sealed partial class EventHereticRustCharge : WorldTargetActionEvent
     public float Speed = 10f;
 }
 
+public sealed partial class EventEmp : InstantActionEvent
+{
+    [DataField]
+    public float Range = 5f;
+
+    [DataField]
+    public float EnergyConsumption = 50000f;
+
+    [DataField]
+    public TimeSpan Duration = TimeSpan.FromSeconds(20f);
+}
+
 // ascensions
 [Serializable, NetSerializable, DataDefinition] public sealed partial class HereticAscensionAshEvent : EntityEventArgs { }
 [Serializable, NetSerializable, DataDefinition] public sealed partial class HereticAscensionVoidEvent : EntityEventArgs { }

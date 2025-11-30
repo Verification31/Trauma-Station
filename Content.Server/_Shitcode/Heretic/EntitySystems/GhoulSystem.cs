@@ -130,16 +130,18 @@ public sealed class GhoulSystem : EntitySystem
         args.PushMarkup(Loc.GetString(ent.Comp.ExamineMessage));
     }
 
-    public void SetBoundHeretic(Entity<GhoulComponent> ent, EntityUid heretic, bool dirty = true)
+    public void SetBoundHeretic(Entity<GhoulComponent, HTNComponent?> ent, EntityUid heretic, bool dirty = true)
     {
-        ent.Comp.BoundHeretic = heretic;
-        _npc.SetBlackboard(ent, NPCBlackboard.FollowTarget, heretic.ToCoordinates());
+        ent.Comp1.BoundHeretic = heretic;
+        _npc.SetBlackboard(ent, NPCBlackboard.FollowTarget, heretic.ToCoordinates(), ent.Comp2);
         if (dirty)
-            Dirty(ent);
+            Dirty(ent, ent.Comp1);
     }
 
     public void GhoulifyEntity(Entity<GhoulComponent> ent)
     {
+        _rejuvenate.PerformRejuvenate(ent);
+
         RemComp<RespiratorComponent>(ent);
         RemComp<BarotraumaComponent>(ent);
         RemComp<HungerComponent>(ent);
@@ -156,9 +158,6 @@ public sealed class GhoulSystem : EntitySystem
 
         EnsureComp<CollectiveMindComponent>(ent).Channels.Add(HereticAbilitySystem.MansusLinkMind);
 
-        if (Exists(ent.Comp.BoundHeretic))
-            SetBoundHeretic(ent, ent.Comp.BoundHeretic.Value, false);
-
         _faction.ClearFactions(ent.Owner);
         _faction.AddFaction(ent.Owner, HereticRuleSystem.HereticFactionId);
 
@@ -174,6 +173,9 @@ public sealed class GhoulSystem : EntitySystem
             var htn = EnsureComp<HTNComponent>(ent);
             htn.RootTask = new HTNCompoundTask { Task = Compound };
             _htn.Replan(htn);
+
+            if (Exists(ent.Comp.BoundHeretic))
+                SetBoundHeretic(ent, ent.Comp.BoundHeretic.Value, false);
         }
 
         if (TryComp<HumanoidAppearanceComponent>(ent, out var humanoid))
@@ -185,7 +187,6 @@ public sealed class GhoulSystem : EntitySystem
             _humanoid.SetBaseLayerColor(ent, HumanoidVisualLayers.Eyes, greycolor, true, humanoid);
         }
 
-        _rejuvenate.PerformRejuvenate(ent);
         if (TryComp<MobThresholdsComponent>(ent, out var th))
         {
             _threshold.SetMobStateThreshold(ent, ent.Comp.TotalHealth, MobState.Dead, th);
@@ -295,8 +296,6 @@ public sealed class GhoulSystem : EntitySystem
             RemComp(nymph.Owner, nymph.Comp1);
         }
 
-        _body.GibBody(ent,
-            body: body,
-            contents: ent.Comp.DropOrgansOnDeath ? GibContentsOption.Drop : GibContentsOption.Skip);
+        _body.GibBody(ent, ent.Comp.DropOrgansOnDeath, body: body);
     }
 }

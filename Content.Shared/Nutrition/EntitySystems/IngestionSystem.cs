@@ -380,10 +380,10 @@ public sealed partial class IngestionSystem : EntitySystem
 
         // Goobstation start
         var volume = split.Volume;
-        if (_stomach.TryTransferSolution(stomachToUse.Value.Owner, split, stomachToUse); )
+        if (_stomach.TryTransferSolution(stomachToUse.Value.Owner, split, stomachToUse))
         {
-            var consumingEv = new ConsumingFoodEvent(entity.Owner, volume);
-            RaiseLocalEvent(args.Target.Value, ref consumingEv);
+            var consumingEv = new ConsumingFoodEvent(food, volume);
+            RaiseLocalEvent(entity, ref consumingEv);
         }
         // Goobstation end
 

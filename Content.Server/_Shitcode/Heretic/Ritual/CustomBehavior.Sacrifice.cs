@@ -148,7 +148,7 @@ namespace Content.Server.Heretic.Ritual;
             try
             {
                 // YES!!! GIB!!!
-                _body.GibBody(uid);
+                _body.GibBody(uid, true);
             }
             catch (Exception e)
             {

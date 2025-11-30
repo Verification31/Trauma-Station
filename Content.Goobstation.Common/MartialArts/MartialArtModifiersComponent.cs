@@ -7,7 +7,7 @@ using System.Numerics;
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization;
 
-namespace Content.Goobstation.Shared.MartialArts.Components;
+namespace Content.Goobstation.Common.MartialArts;
 
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class MartialArtModifiersComponent : Component

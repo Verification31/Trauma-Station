@@ -25,6 +25,7 @@
 // the fucking eye of the shitcode storm
 
 using System.Linq;
+using Content.Goobstation.Common.MartialArts;
 using Content.Goobstation.Common.Weapons.DelayedKnockdown;
 using Content.Goobstation.Shared.Overlays;
 using Content.Server.Atmos.EntitySystems;
@@ -70,7 +71,6 @@ using Content.Shared._Shitcode.Heretic.Components;
 using Content.Shared._Shitcode.Heretic.Systems.Abilities;
 using Content.Shared.Damage.Components;
 using Content.Goobstation.Maths.FixedPoint;
-using Content.Goobstation.Shared.MartialArts.Components;
 using Content.Server.Cloning;
 using Content.Shared.Chat;
 using Content.Shared.Heretic.Components;
@@ -130,7 +130,7 @@ public sealed partial class HereticAbilitySystem : SharedHereticAbilitySystem
     [Dependency] private readonly PvsOverrideSystem _pvs = default!;
     [Dependency] private readonly CloningSystem _cloning = default!;
     [Dependency] private readonly MovementSpeedModifierSystem _modifier = default!;
-    [Dependency] private readonly IComponentFactory _compFact = default!;
+    [Dependency] private readonly IComponentFactory _compFactory = default!;
 
     private static readonly ProtoId<HereticRitualPrototype> BladeBladeRitual = "BladeBlade";
 
