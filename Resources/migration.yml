@@ -8,6 +8,29 @@
 # WallSolid: Window
 # Table: null
 
+# <Trauma> - too lazy to port debugoks multi migration thing
+# 2025-10-30
+DVSmartFridgeMedical: SmartFridgeMedical
+
+# 2025-11-12
+Terminus: null
+
+# 2025-11-23
+MiniatureEnergyCrossbow: WeaponEnergyCrossbow
+
+# 2025-11-28
+PlushieXeve: null
+# 2025-12-08
+SuitStorageBlueshield: null # it didnt fucking have anything
+
+# 2025-12-19
+FelinidCube: HumanCube
+TajaranCube: HumanCube
+VulpkaninCube: HumanCube
+OrganFelinidEars: ClothingHeadHatCatEars
+PlushieMnwaar: null # fuck you
+# </Trauma>
+
 # Goobstation - Submarine from DeltaV
 AirlockBoxerGlassLocked: AirlockServiceGlassLocked
 AirlockClownGlassLocked: AirlockServiceGlassLocked
@@ -958,24 +981,6 @@ AirlockBlueshieldOfficerCommandGlassLocked: AirlockCentralCommandGlassLocked
 # 2025-10-28
 DrinkKiraSpecial: DrinkOrangeLimeSodaGlass
 
-# Trauma - 2025-10-30
-DVSmartFridgeMedical: SmartFridgeMedical
-
-# Trauma - 2025-11-12
-Terminus: null
-
-# Trauma - 2025-11-23
-MiniatureEnergyCrossbow: WeaponEnergyCrossbow
-
-# Trauma - 2025-11-28
-PlushieXeve: null
-
-# Trauma - 2025-12-08
-SuitStorageBlueshield: null # it didnt fucking have anything
-
-# Trauma - 2025-12-19
-FelinidCube: HumanCube
-TajaranCube: HumanCube
-VulpkaninCube: HumanCube
-OrganFelinidEars: ClothingHeadHatCatEars
-PlushieMnwaar: null # fuck you
+# 2025-12-06
+SpawnPointZookeeper: null
+SpawnPointBoxer: null
