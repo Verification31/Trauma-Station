@@ -16,7 +16,7 @@
   parent: [BoxVial, BaseSyndicateContraband]
   id: ChemicalSynthesisKit
   name: chemical synthesis kit
-  description: A starter kit for the aspiring chemist, notably includes a chemical payload and timer, a hyperzine syringe, and two vials of vestine for all your criminal needs! # Goobstation
+  description: A starter kit for the aspiring chemist, includes two vials of vestine for all your criminal needs!
   components:
   - type: Storage
     grid:
@@ -25,7 +25,6 @@
     containers:
       storagebase: !type:AllSelector
         children:
-        - id: ChemicalPayload # Goob
         - id: Beaker
           amount: 2
         - id: Dropper
