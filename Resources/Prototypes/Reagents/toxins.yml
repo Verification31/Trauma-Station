@@ -558,16 +558,23 @@
         probability: 0.1
         conditions:
         - !type:MetabolizerTypeCondition
-          type: [ Animal, Vox, Plant, Yowie ] # Trauma - Plant-Yowie
+          type: [ Animal, Vox, Plant, Yowie ] # Trauma - Yowie
           inverted: true
       - !type:HealthChange
         conditions:
         - !type:MetabolizerTypeCondition
-          type: [ Animal, Vox, Plant, Yowie ] # Trauma - Plant-Yowie
+          type: [ Animal, Vox, Plant, Yowie ] # Trauma - Yowie
           inverted: true
         damage:
           types:
             Poison: 1
+      - !type:HealthChange
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [ Plant ]
+        damage:
+          types:
+            Poison: .25
       - !type:AdjustReagent
         conditions:
         - !type:MetabolizerTypeCondition
