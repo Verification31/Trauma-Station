@@ -168,11 +168,11 @@
   guides: # goobstation
   - Security
   - SpaceLaw
-  - Legal SOP
+  - SOPLegal
   - Command
-  - HeadOfSecurity SOP
-  - Security SOP
-  - Alert Levels
+  - SOPHeadOfSecurity
+  - SOPSecurity
+  - SOPAlertLevels
   goobcoins: 45 #Goob content
   access:
   - HeadOfSecurity

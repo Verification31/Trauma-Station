@@ -158,9 +158,9 @@
       - Felinid
   guides: # goobstation
   - Command
-  - Succession
-  - StandardProcedures SOP
-  - HeadOfPersonnel SOP
+  - SOPSuccession
+  - SOPStandardProcedures
+  - SOPHeadOfPersonnel
   - Writing
   goobcoins: 40 #Goob content
   weight: 20
