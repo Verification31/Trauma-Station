@@ -3,6 +3,7 @@ using System.Numerics;
 using Content.Goobstation.Shared.Disease.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Rejuvenate;
+using Robust.Shared.Containers;
 using Robust.Shared.Map;
 using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
@@ -18,6 +19,7 @@ public abstract partial class SharedDiseaseSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] protected readonly IRobustRandom _random = default!;
     [Dependency] private readonly MobStateSystem _mobState = default!;
+    [Dependency] private readonly SharedContainerSystem _container = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
 
     private TimeSpan _lastUpdated = TimeSpan.FromSeconds(0);
@@ -40,7 +42,8 @@ public abstract partial class SharedDiseaseSystem : EntitySystem
         SubscribeLocalEvent<DiseaseCarrierComponent, DiseaseCuredEvent>(OnDiseaseCured);
         SubscribeLocalEvent<DiseaseCarrierComponent, RejuvenateEvent>(OnRejuvenate);
 
-        SubscribeLocalEvent<DiseaseComponent, MapInitEvent>(OnDiseaseInit);
+        SubscribeLocalEvent<DiseaseComponent, ComponentInit>(OnDiseaseInit);
+        SubscribeLocalEvent<DiseaseComponent, MapInitEvent>(OnDiseaseMapInit);
         SubscribeLocalEvent<DiseaseComponent, DiseaseUpdateEvent>(OnUpdateDisease);
         SubscribeLocalEvent<DiseaseComponent, DiseaseCloneEvent>(OnClonedInto);
 
@@ -97,7 +100,12 @@ public abstract partial class SharedDiseaseSystem : EntitySystem
         }
     }
 
-    private void OnDiseaseInit(Entity<DiseaseComponent> ent, ref MapInitEvent args)
+    private void OnDiseaseInit(Entity<DiseaseComponent> ent, ref ComponentInit args)
+    {
+        ent.Comp.EffectsContainer = _container.EnsureContainer<Container>(ent.Owner, ent.Comp.EffectsContainerId);
+    }
+
+    private void OnDiseaseMapInit(Entity<DiseaseComponent> ent, ref MapInitEvent args)
     {
         // check if disease is a preset
         if (ent.Comp.StartingEffects.Count == 0)

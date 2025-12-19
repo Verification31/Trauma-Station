@@ -3,6 +3,9 @@
   id: DiseaseBase
   components:
   - type: Disease
+  - type: ContainerContainer
+    containers:
+      disease_effects: !type:Container
 
 - type: entity
   id: DiseaseBaseMouse

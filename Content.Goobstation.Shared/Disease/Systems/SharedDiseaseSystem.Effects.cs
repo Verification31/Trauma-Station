@@ -284,12 +284,10 @@ public partial class SharedDiseaseSystem
         if (!Resolve(ent, ref ent.Comp))
             return false;
 
-        if (!ent.Comp.Effects.Remove(effect))
+        if (!_container.Remove(effect, ent.Comp.EffectsContainer))
             return false;
 
         PredictedQueueDel(effect);
-
-        Dirty(ent, ent.Comp);
         return true;
     }
 
@@ -305,7 +303,7 @@ public partial class SharedDiseaseSystem
     }
 
     /// <summary>
-    /// Removes the specified disease effect from this disease
+    /// Adds the specified disease effect to this disease
     /// </summary>
     public bool TryAddEffect(Entity<DiseaseComponent?> ent, EntityUid effectUid, [NotNullWhen(true)] out Entity<DiseaseEffectComponent>? effect)
     {
@@ -319,10 +317,8 @@ public partial class SharedDiseaseSystem
             return false;
         }
         effect = (effectUid, diseaseEffect);
-        ent.Comp.Effects.Add(effectUid);
 
-        Dirty(ent);
-        return true;
+        return _container.Insert(effectUid, ent.Comp.EffectsContainer);
     }
 
     /// <summary>
