@@ -852,3 +852,7 @@ Entries:
       message: You can no longer play as oni or vulp.
   id: 96
   time: '2025-12-21T13:37:16.0000000+00:00'
+- author: Added Holy
+  changes: []
+  id: 97
+  time: '2025-12-21T13:39:14.0000000+00:00'
