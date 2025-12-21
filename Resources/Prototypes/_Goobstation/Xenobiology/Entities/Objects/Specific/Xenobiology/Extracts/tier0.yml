@@ -28,6 +28,7 @@
         frequency: 20
       - !type:SpawnEntity
         entity: MobSlimeXenobioBabyGreySpawner
+        number: 3
     - reagents: [ Blood ]
       methods: [ Touch, Injection ]
       effects:
