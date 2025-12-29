@@ -916,3 +916,9 @@ Entries:
       message: Fixed medborg surgery UI being buggy.
   id: 104
   time: '2025-12-29T20:35:16.0000000+00:00'
+- author: GeneRickUsername
+  changes:
+    - type: Fix
+      message: Fixed Shitcode that keeps light on when no fire active.
+  id: 105
+  time: '2025-12-29T20:36:19.0000000+00:00'
