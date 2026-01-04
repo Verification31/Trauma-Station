@@ -1044,3 +1044,13 @@ Entries:
         played.
   id: 123
   time: '2026-01-04T04:52:35.0000000+00:00'
+- author: Nousagi37
+  changes:
+    - type: Add
+      message: Radio host enabled on Loop
+    - type: Add
+      message: Xenobio added east of Science though maintenance on Loop
+    - type: Tweak
+      message: Armory Alert level safes standardized to match Fland
+  id: 124
+  time: '2026-01-04T20:53:55.0000000+00:00'
