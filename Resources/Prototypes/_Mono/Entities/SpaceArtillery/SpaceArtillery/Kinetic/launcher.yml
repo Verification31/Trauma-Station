@@ -15,6 +15,8 @@
   - type: Battery
     maxCharge: 20000
     startingCharge: 20000
+  - type: ApcPowerReceiver
+    powerLoad: 200
   - type: ExaminableBattery
   - type: Appearance
   - type: AutoShootGun
@@ -72,6 +74,8 @@
   - type: Battery
     maxCharge: 30000
     startingCharge: 30000
+  - type: ApcPowerReceiver
+    powerLoad: 970
   - type: ExaminableBattery
   - type: WirelessNetworkConnection
     range: 500
@@ -119,6 +123,8 @@
   - type: Battery
     maxCharge: 40000
     startingCharge: 40000
+  - type: ApcPowerReceiver
+    powerLoad: 725
   - type: ExaminableBattery
   - type: WirelessNetworkConnection
     range: 500
@@ -171,6 +177,8 @@
   - type: Battery
     maxCharge: 40000
     startingCharge: 40000
+  - type: ApcPowerReceiver
+    powerLoad: 3714
   - type: ExaminableBattery
   - type: WirelessNetworkConnection
     range: 500
@@ -219,6 +227,8 @@
   - type: Battery
     maxCharge: 12000
     startingCharge: 12000
+  - type: ApcPowerReceiver
+    powerLoad: 13500
   - type: ExaminableBattery
   - type: WirelessNetworkConnection
     range: 500
@@ -283,6 +293,8 @@
   - type: Battery
     maxCharge: 12000
     startingCharge: 12000
+  - type: ApcPowerReceiver
+    powerLoad: 13500
   - type: ExaminableBattery
   - type: WirelessNetworkConnection
     range: 500
@@ -346,6 +358,8 @@
   - type: Battery
     maxCharge: 40000
     startingCharge: 40000
+  - type: ApcPowerReceiver
+    powerLoad: 1350
   - type: ExaminableBattery
   - type: WirelessNetworkConnection
     range: 500
@@ -422,6 +436,8 @@
   - type: Battery
     maxCharge: 40000
     startingCharge: 40000
+  - type: ApcPowerReceiver
+    powerLoad: 2300
   - type: ExaminableBattery
   - type: WirelessNetworkConnection
     range: 500
@@ -481,6 +497,8 @@
   - type: Battery
     maxCharge: 40000
     startingCharge: 40000
+  - type: ApcPowerReceiver
+    powerLoad: 2200
   - type: ExaminableBattery
   - type: WirelessNetworkConnection
     range: 500

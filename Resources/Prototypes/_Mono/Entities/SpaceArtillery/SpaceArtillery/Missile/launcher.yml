@@ -17,6 +17,8 @@
   - type: Battery
     maxCharge: 40000
     startingCharge: 40000
+  - type: ApcPowerReceiver
+    powerLoad: 950
   - type: ExaminableBattery
   - type: WirelessNetworkConnection
     range: 500
@@ -64,6 +66,8 @@
   - type: Battery
     maxCharge: 40000
     startingCharge: 40000
+  - type: ApcPowerReceiver
+    powerLoad: 450
   - type: ExaminableBattery
   - type: WirelessNetworkConnection
     range: 500
@@ -110,6 +114,8 @@
   - type: Battery
     maxCharge: 40000
     startingCharge: 40000
+  - type: ApcPowerReceiver
+    powerLoad: 950
   - type: ExaminableBattery
   - type: WirelessNetworkConnection
     range: 500
@@ -174,6 +180,8 @@
   - type: Battery
     maxCharge: 40000
     startingCharge: 40000
+  - type: ApcPowerReceiver
+    powerLoad: 3000
   - type: ExaminableBattery
   - type: WirelessNetworkConnection
     range: 500

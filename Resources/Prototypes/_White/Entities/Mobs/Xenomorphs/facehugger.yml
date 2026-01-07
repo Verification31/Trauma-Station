@@ -1,5 +1,5 @@
 - type: entity
-  parent: [ClothingMaskBase, BaseMob, MobDamageable]
+  parent: [BaseMob, ClothingMaskBase, MobDamageable]
   id: MobXenomorphFaceHugger
   name: xenomorph facehugger
   description: A writhing nightmare. The facehugger clings to its victim's face, forcibly inserting a xenomorph fetus.
@@ -89,7 +89,7 @@
     tags:
     - XenomorphItem
   - type: Physics
-    bodyType: Dynamic
+    bodyType: KinematicController
   - type: CollisionWake
     enabled: false
   - type: RequireProjectileTarget

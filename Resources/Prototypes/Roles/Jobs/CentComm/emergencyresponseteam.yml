@@ -91,14 +91,6 @@
     - MedkitCombatFilled # End of first line
     - GrenadeShrapnel
     - EmpGrenade
-    belt:
-    - Truncheon
-    - Handcuffs
-    - Handcuffs
-    - CrowbarRed
-    - WeaponPistolN1984
-    - MagazineMagnum
-    - EmergencyMedipen
 
 - type: chameleonOutfit
   id: ERTLeaderChameleonOutfit
@@ -244,7 +236,6 @@
     outerClothing: ClothingOuterArmourDurathread # Durathread armor is cooler.
     id: ERTEngineerPDA
     ears: ClothingHeadsetAltCentCom
-    belt: ClothingBeltChiefEngineerFilled
     pocket1: WeaponPulsePistol # Literally described as "Favored sidearm of NT ERT operatives".
     pocket2: GasAnalyzer
   storage:
@@ -404,16 +395,6 @@
     - TelescopicShield
     - HoloprojectorSecurity
     - PowerCellHigh
-    belt:
-    - Stunbaton
-    - Handcuffs
-    - Handcuffs
-    - CrowbarRed
-    - ERTSecurityUndeterminedWeapon
-   # - MagazinePistol
-    - WeaponPistolMk58
-    - MagazinePistol
-    - EmergencyMedipen
 
 - type: startingGear
   id: ERTSecurityGearArmedRifle
@@ -466,14 +447,6 @@
     - GrenadeFlash
     - GrenadeFlash
     - MagazinePistol
-    belt:
-    - Truncheon
-    - Handcuffs
-    - Handcuffs
-    - CrowbarRed
-    - WeaponPistolMk58
-    - MagazinePistol
-    - EmergencyMedipen
 
 - type: startingGear
   parent: ERTSecurityGearEVA
@@ -495,14 +468,6 @@
     - MagazinePistolSubMachineGunTopMounted
     - MagazinePistolSubMachineGunTopMounted
     - MagazinePistolSubMachineGunTopMounted
-    belt:
-    - Truncheon
-    - Handcuffs
-    - Handcuffs
-    - CrowbarRed
-    - WeaponPistolMk58
-    - MagazinePistol
-    - EmergencyMedipen
 
 - type: startingGear
   parent: ERTSecurityGearEVA
@@ -521,14 +486,6 @@
     - ExGrenade
     - CableDetStack
     - BoxDetonator
-    belt:
-    - Truncheon
-    - Handcuffs
-    - Handcuffs
-    - CrowbarRed
-    - WeaponPistolMk58
-    - MagazinePistol
-    - EmergencyMedipen
 
 - type: chameleonOutfit
   id: ERTSecurityChameleonOutfit
@@ -635,15 +592,6 @@
     - MedkitCombatFilled
     - ClothingEyesGlassesChemical
     - ChemistryBottleOmnizine
-    belt:
-    - Truncheon
-    - Zipties
-    - CrowbarRed
-    - MagazineRifle
-    - MagazineRifle
-    - MagazineRifleIncendiary
-    - MagazineRifleUranium # End of first line
-    - Zipties
 
 - type: chameleonOutfit
   id: ERTMedicalChameleonOutfit
@@ -686,7 +634,6 @@
     outerClothing: ClothingOuterArmourDurathread # Durathread armor is cooler.
     id: ERTJanitorPDA
     ears: ClothingHeadsetAltCentCom
-    belt: ClothingBeltJanitorFilled
     pocket1: WeaponPulsePistol # Literally described as "Favored sidearm of NT ERT operatives".
   storage:
     back:
@@ -709,7 +656,7 @@
     outerClothing: ClothingOuterHardsuitERTJanitor
     id: ERTJanitorPDA
     ears: ClothingHeadsetAltCentCom
-    belt: ClothingBeltJanitorFilled
+    belt: ClothingBeltMilitaryWebbingERT # Trauma - fit belt shit
     pocket1: WeaponPulsePistol # Literally described as "Favored sidearm of NT ERT operatives".
   storage:
     back:

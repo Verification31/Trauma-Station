@@ -74,7 +74,7 @@
     chargedRechargeRate: 0
     dischargedRechargeRate: 1
   - type: BatterySelfRecharger
-    autoRechargeRate: 0
+    autoRechargeRate: 1
 
 - type: entity
   name: syndicate medical beam gun
@@ -115,4 +115,4 @@
     chargedRechargeRate: 0
     dischargedRechargeRate: 1.5
   - type: BatterySelfRecharger
-    autoRechargeRate: 0
+    autoRechargeRate: 1.5

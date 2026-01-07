@@ -40,7 +40,7 @@ public sealed partial class GameDirectorComponent : Component
     ///   The story we are currently executing from stories (for easier debugging). Since it is for
     ///   debugging, it does not need a DataField.
     /// </summary>
-    [DataField]
+    [ViewVariables]
     public ProtoId<StoryPrototype> CurrentStoryName;
 
     /// <summary>
@@ -84,6 +84,7 @@ public sealed partial class GameDirectorComponent : Component
     /// <summary>
     /// All the possible roundstart antags.
     /// </summary>
+    [DataField]
     public ProtoId<WeightedRandomPrototype> RoundStartAntagsWeightTable = "GameDirector";
 }
 
