@@ -11,13 +11,11 @@ namespace Content.Goobstation.Shared.Disease.Components;
 [EntityCategory("Diseases")]
 public sealed partial class DiseaseComponent : Component
 {
-    public const string EffectContainerId = "diseaseEffectContainer";
-
     /// <summary>
     /// Name of the container that stores effect entities.
     /// </summary>
     [DataField]
-    public string EffectsContainerId = "disease_effects";
+    public string EffectContainerId = "diseaseEffectContainer";
 
     [ViewVariables]
     public Container Effects = default!;

@@ -110,7 +110,7 @@ public abstract partial class SharedDiseaseSystem : EntitySystem
 
     private void OnDiseaseInit(Entity<DiseaseComponent> ent, ref ComponentInit args)
     {
-        ent.Comp.Effects = _container.EnsureContainer<Container>(ent.Owner, ent.Comp.EffectsContainerId);
+        ent.Comp.Effects = _container.EnsureContainer<Container>(ent.Owner, ent.Comp.EffectContainerId);
     }
 
     private void OnDiseaseMapInit(Entity<DiseaseComponent> ent, ref MapInitEvent args)
@@ -341,7 +341,7 @@ public abstract partial class SharedDiseaseSystem : EntitySystem
         if (!Resolve(ent, ref ent.Comp, false))
             return false;
 
-        foreach (var disease in ent.Comp.Diseases.ContainedEntities.ToList())
+        foreach (var disease in new(ent.Comp.Diseases.ContainedEntities))
         {
             if (!TryCure(ent, disease))
                 return false;
