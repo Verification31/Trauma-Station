@@ -1348,3 +1348,9 @@ Entries:
       message: 4 new lobby arts
   id: 160
   time: '2026-01-13T22:08:57.0000000+00:00'
+- author: SpeltIncorrectyl
+  changes:
+    - type: Tweak
+      message: Security sidearm now goes red when set to lethal mode.
+  id: 161
+  time: '2026-01-13T22:11:02.0000000+00:00'
