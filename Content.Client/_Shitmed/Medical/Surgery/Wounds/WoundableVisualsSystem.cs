@@ -46,7 +46,6 @@ public sealed class WoundableVisualsSystem : VisualizerSystem<WoundableVisualsCo
     {
         base.Initialize();
         SubscribeLocalEvent<WoundableVisualsComponent, ComponentInit>(InitializeEntity, after: [typeof(WoundSystem)]);
-        SubscribeLocalEvent<WoundableVisualsComponent, AfterAutoHandleStateEvent>(OnAfterAutoHandleState);
         SubscribeLocalEvent<WoundableVisualsComponent, BodyPartRemovedEvent>(OnWoundableRemoved);
         SubscribeLocalEvent<WoundableVisualsComponent, BodyPartAddedEvent>(OnWoundableConnected);
         SubscribeLocalEvent<WoundableVisualsComponent, WoundableIntegrityChangedEvent>(OnWoundableIntegrityChanged);
@@ -78,14 +77,6 @@ public sealed class WoundableVisualsSystem : VisualizerSystem<WoundableVisualsCo
     }
     #endregion
     #region Event Handlers
-
-    private void OnAfterAutoHandleState(Entity<WoundableVisualsComponent> ent, ref AfterAutoHandleStateEvent args)
-    {
-        if (!TryComp(ent, out SpriteComponent? partSprite))
-            return;
-
-        UpdateWoundableVisuals(ent, (ent, partSprite));
-    }
 
     private void OnWoundableConnected(Entity<WoundableVisualsComponent> ent, ref BodyPartAddedEvent args)
     {

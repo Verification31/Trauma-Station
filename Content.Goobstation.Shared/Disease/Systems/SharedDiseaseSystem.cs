@@ -137,7 +137,7 @@ public abstract partial class SharedDiseaseSystem : EntitySystem
         if (!_carrierQuery.TryComp(carrier, out var carrierComp))
             return;
 
-        var failEv = new DiseaseEffectFailedEvent(null, ent, (carrier, carrierComp));
+        var failEv = new DiseaseEffectFailedEvent(default!, ent, (carrier, carrierComp));
         // it's assumed that fail handlers won't remove effects
         foreach (var effect in ent.Comp.Effects.ContainedEntities)
         {
@@ -341,7 +341,8 @@ public abstract partial class SharedDiseaseSystem : EntitySystem
         if (!Resolve(ent, ref ent.Comp, false))
             return false;
 
-        foreach (var disease in new(ent.Comp.Diseases.ContainedEntities))
+        var diseases = new List<EntityUid>(ent.Comp.Diseases.ContainedEntities);
+        foreach (var disease in diseases)
         {
             if (!TryCure(ent, disease))
                 return false;
