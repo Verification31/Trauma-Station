@@ -1354,3 +1354,9 @@ Entries:
       message: Security sidearm now goes red when set to lethal mode.
   id: 161
   time: '2026-01-13T22:11:02.0000000+00:00'
+- author: Armok
+  changes:
+    - type: Add
+      message: Grey slime extract makes slime food instead of monkies to reduce lag.
+  id: 162
+  time: '2026-01-13T23:56:23.0000000+00:00'
