@@ -1398,3 +1398,13 @@ Entries:
       message: Fixed hyposprays.
   id: 166
   time: '2026-01-14T22:26:35.0000000+00:00'
+- author: MayasMischief
+  changes:
+    - type: Fix
+      message: >-
+        The forged knife can now be used for slicing, and also the sword too I
+        guess.
+    - type: Remove
+      message: Removed BSO
+  id: 167
+  time: '2026-01-15T08:36:02.0000000+00:00'
