@@ -1420,3 +1420,11 @@ Entries:
       message: Pentenic Acid no longer purges itself from your bloodstream.
   id: 169
   time: '2026-01-15T19:10:58.0000000+00:00'
+- author: TurboTrackerss14
+  changes:
+    - type: Fix
+      message: >-
+        Musiver, EldritchEssence, and Mugwort no longer purge themselves when
+        used.
+  id: 170
+  time: '2026-01-15T19:29:59.0000000+00:00'
