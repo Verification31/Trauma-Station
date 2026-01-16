@@ -1488,3 +1488,9 @@ Entries:
       message: Fixed Crit killing just ghosting you
   id: 177
   time: '2026-01-16T15:48:49.0000000+00:00'
+- author: deltanedas
+  changes:
+    - type: Add
+      message: Added Hideo Kojima to the credits.
+  id: 178
+  time: '2026-01-16T17:03:56.0000000+00:00'
